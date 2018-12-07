@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/banner_title"
+        android:gravity="center"
+        android:text="BannerAd"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+    <LinearLayout
+        android:layout_below="@id/banner_title"
+        android:id="@+id/btns"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/load_image"
+            android:text="Load Image R"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/load_ice"
+            android:text="Load Ice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/load_gradient"
+            android:text="Load Gradient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <ImageView
+        android:layout_below="@+id/btns"
+        android:id="@+id/image1"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        ></ImageView>
+    <ImageView
+        android:layout_below="@+id/image1"
+        android:id="@+id/image2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        ></ImageView>
+    <!--<RelativeLayout-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:layout_marginBottom="20dp"-->
+        <!--android:layout_below="@id/btns"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+        <!--<LinearLayout-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="100dp">-->
+            <!--<RelativeLayout-->
+                <!--android:background="#ee0000"-->
+                <!--android:layout_width="50dp"-->
+                <!--android:layout_height="match_parent">-->
+                <!--<TextView-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="left constraint"-->
+                    <!--android:layout_height="match_parent" >-->
+                <!--</TextView>-->
+            <!--</RelativeLayout>-->
+            <!--<RelativeLayout-->
+                <!--android:background="#dddddd"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent">-->
+                <!--<RelativeLayout-->
+                    <!--android:id="@+id/banner_320_50_container"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content">-->
+                <!--</RelativeLayout>-->
+            <!--</RelativeLayout>-->
+
+        <!--</LinearLayout>-->
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/banner_300_250_container"-->
+            <!--android:background="#dddddd"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_width="200dp"-->
+            <!--android:layout_height="100dp">-->
+        <!--</RelativeLayout>-->
+    <!--</RelativeLayout>-->
+
+</RelativeLayout>
