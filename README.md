@@ -8,7 +8,7 @@
 #### 1.3
     Android 4.0.3+ (Build Version Code 15+)
 
-## 2. 集成SDK
+## 2. 集成SDK
 #### 2.1 引入SDK
 将libs中的centrixlink_global_sdk.aar引入工程,并在gradle中进行引用
 ```
@@ -37,7 +37,7 @@ libs
 
 ## 3. 集成广告
 #### 3.1 应用启动,注册AppID, AppKey
-在Activity中初始化SDK,提供在平台中生成的AppId和AppKey
+在Activity中初始化SDK,提供在平台中生成的AppId和AppKey
 ```Java
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -52,10 +52,10 @@ protected void onCreate(Bundle savedInstanceState) {
     CentrixlinkGlobalAdSDK.startWithAppConfig(appID, appKey, this);
 }
 ```
-在[Centrixlink开发者官网](http://www.centrixlink.com)注册一个应用后,将注册生成的APPID,和APPKEY作为启动广告的参数,传入以成功启动广告SDK.
+在[Centrixlink开发者官网](http://www.centrixlink.com)注册一个应用后,将注册生成的APPID,和APPKEY作为启动广告的参数,传入以成功启动广告SDK.
 
 #### 3.2 SDK提供的广告类型以及集成方法
-AndroidSDK设计中,`BannerAd`,`NativeAd`,`InterstitialAd`的回调方法基本相同(`InterstitialAd`中添加了点击关闭的事件以及将要呈现`InterstitialAdActivity`的回调),需要根据回调的实体来判断回调对象.
+AndroidSDK设计中,`BannerAd`,`NativeAd`,`InterstitialAd`的回调方法基本相同(`InterstitialAd`中添加了点击关闭的事件以及将要呈现`InterstitialAdActivity`的回调),需要根据回调的实体来判断回调对象.
 的具体类型.
 #### 3.2.1 BannerAd
 ##### 3.2.1.1 创建BannerAd
@@ -64,7 +64,7 @@ BannerAd bannerAd = new BannerAd("banner_ad_placement_id", listener);
 bannerAd.loadAd();
 ```
 ##### 3.2.1.2 BannerAd渲染
-将`BannerAd`渲染到开发者提供的容器视图`ViewGroup`
+将`Banner Ad`渲染到开发者提供的容器视图`ViewGroup`
 ```Java
 bannerAd.renderAdableOn(instance_of_viewgroup)
 ```
@@ -99,10 +99,10 @@ interstitialAd.showAd(false);
 ```
 如果`showAd`方法的参数为`false`则在点击`interstitialAd`后,不自动关闭`InterstitialAdActivity`,反之,则关闭`InterstitialAdActivity`.
 
-_NOTE_ 如果`interstitialAd`也使用`renderAdableOn(instance_of_viewgroup);`来显示`InterstitialAdActivity`,该方法会调用`interstitialAd.show(false);`.
+_NOTE_ 如果`interstitialAd`也使用`renderAdableOn(instance_of_viewgroup);`来显示`InterstitialAdActivity`,该方法会调用`interstitialAd.show(false);`.
 
 #### 3.2.4 广告对象的回调方法
-```Java
+```Java
 void onAdableLoadFinished(Adable ad, Errorable error);
 ```
 `ad`加载结束回调.
@@ -141,7 +141,7 @@ void onAdableClickTrackingFinished(Adable ad, Errorable error);
 ```Java
 void onAdalbeWillLeftApplication(Adable ad, Errorable error);
 ```
-点击`ad`后跳出当前应用的回调
+点击`ad`后跳出当前应用的回调
 
 ----
 
@@ -175,7 +175,7 @@ void onAdWillShowPreview(Adable adable, Errorable error);
 |1800|图片下载错误|
 |1900|placementID错误|
 |3000, 3001, 3002, 3003, 3004|nativeAd数据返回错误|
-|3100|开发者提供渲染nativeAd视图的容器尺寸不合规,不同类型nativeAd,所需容器最小宽度不同.|
+|3100|开发者提供渲染nativeAd视图的容器尺寸不合规,不同类型nativeAd,所需容器最小宽度不同.|
 |4000, 4001, 4002, 4003, 4004, 4005|bannerAd数据返回错误|
 |4100|开发者提供渲染bannerAd视图的容器尺寸不合规,bannerAd所需渲染容器宽高需要大于等于广告位尺寸|
 |5000, 5001, 5002, 5003, 5004|interstitialAd数据返回错误|
